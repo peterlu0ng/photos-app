@@ -1,4 +1,43 @@
-<h1>Welcome to Photo app</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<% if current_user %>
+  <h3>Welcome: <%= current_user.email %></h3>
+<% else %>
+  <div class="jumbotron text-center">
+    <h2>Welcome to the Photo Management App.</h2>
+  </div>
 
-<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete}%>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Premium Plan</h5>
+        <div class="features">
+          <ul>
+            <li>Unlimited Image Uploads</li>
+            <li>Responsive design</li>
+            <li>Access anywhere</li>
+          </ul>
+        </div>
+        <p class="card-text">Price: $10</p>
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-secondary sign-up' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title center">Amaze Plan</h5>
+        <div class="features">
+          <ul>
+            <li>Unlimited Image Uploads</li>
+            <li>Responsive design</li>
+            <li>Access anywhere</li>
+            <li class='extra'>Unlimited projects</li>
+          </ul>
+        </div>
+        <p class="card-text">Price: $20</p>
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-secondary sign-up' %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
