@@ -12,10 +12,21 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  # Udemy Rails: Set Action Mailer
-  config.action_mailer.delivery_method = :smtp
   # config.action_mailer.delivery_method = :test
   config.action_mailer.default_url_options = { :host => 'https://mysite-e75i.onrender.com/' }
+    # Udemy Rails: Set Action Mailer
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "sandbox85b30f78e34342c1a1fc178f1054a9d5.mailgun.org",
+  :user_name => "postmaster@sandbox85b30f78e34342c1a1fc178f1054a9d5.mailgun.org",
+  :password => "66f3119f2d2073789e0bf5c5ddc47fb4-0996409b-177cde22"
+}
+
+
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
