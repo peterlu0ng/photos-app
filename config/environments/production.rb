@@ -17,12 +17,10 @@ Rails.application.configure do
     # Udemy Rails: Set Action Mailer
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :authentication => :plain,
-  :address => "smtp.mailgun.org",
+  :address => "smtp.mailersend.net",
   :port => 587,
-  :domain => "PLACEHOLDER",
-  :user_name => "PLACEHOLDER",
-  :password => "PLACEHOLDER"
+  :user_name => "username_mailersend",
+  :password => "password_mailersend"
 }
 
 
