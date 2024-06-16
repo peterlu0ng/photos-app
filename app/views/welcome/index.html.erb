@@ -1,15 +1,15 @@
-
-  <%# <h3>Welcome: <%= current_user.email</h3> %>
+<% if current_user %>
+  <h3>Welcome: <%= current_user.email %></h3>
   <div class="jumbotron text-center">
     <h2>Welcome to the Photo Management App.</h2>
   </div>
 
   <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Premium Plan</h5>
-        <div class="features">
+  <div class="col-sm-3 mx-auto">
+    <div class="card mx-auto">
+      <div class="card-body mx-auto">
+        <h5 class="card-title mx-auto">Premium Plan</h5>
+        <div class="features mx-auto">
           <ul>
             <li>Unlimited Image Uploads</li>
             <li>Responsive design</li>
@@ -17,25 +17,9 @@
           </ul>
         </div>
         <p class="card-text">Price: $10</p>
-          <%= link_to 'Upgrade account!', checkout_path, class: 'btn btn-secondary sign-up' %>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title center">Amaze Plan</h5>
-        <div class="features">
-          <ul>
-            <li>Unlimited Image Uploads</li>
-            <li>Responsive design</li>
-            <li>Access anywhere</li>
-            <li class='extra'>Unlimited projects</li>
-          </ul>
-        </div>
-        <p class="card-text">Price: $20</p>
-          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-secondary sign-up' %>
+          <%= link_to 'Checkout', checkout_path, class: 'btn btn-success sign-up' %>
       </div>
     </div>
   </div>
 </div>
+<% end %>
