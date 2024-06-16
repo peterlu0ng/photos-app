@@ -76,3 +76,5 @@ gem 'devise-bootstrap-views'
 gem "sassc-rails"
 gem "bootstrap"
 gem 'stripe'
+
+gem "pay", "~> 7.2"

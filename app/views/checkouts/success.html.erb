@@ -1,0 +1,12 @@
+<h1>Succcess</h1>
+<p>You just payed for my thing!</p>
+<h2>Total amount $<%= @session.amount_total.to_f / 100 %> </h2>
+<br>
+<% @line_items.each do |item|%>
+    <h3><%= item.description %></h3>
+
+
+
+
+
+<% end %>
