@@ -82,3 +82,4 @@ gem "pay", "~> 7.2"
 gem "carrierwave"
 gem "mini_magick"
 gem "twitter-bootstrap-rails"
+gem 'font-awesome-rails'
