@@ -4,23 +4,17 @@
 </div>
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+    <tr>      
       <th><%= model_class.human_attribute_name(:name_string) %></th>
       <th><%= model_class.human_attribute_name(:picture) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @images.each do |image| %>
       <tr>
-        <td><%= link_to image.id, image_path(image) %></td>
-        <td><%= image.name_string %></td>
-        <td><%= image.picture %></td>
-        <td><%= image.user_id %></td>
-        <td><%=l image.created_at %></td>
+        <td><%= link_to image.name_string, image_path(image) %></td>
+        <td><%= image_tag image.picture.url, width: "250" %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       image_path(image), :class => 'btn btn-default btn-xs' %>
