@@ -26,7 +26,8 @@
     <%= f.label :current_image, :class => 'control-label col-lg-2' %>
     <%= image_tag(@image.picture.url, width: "250") if @image.picture? %>
     <div class="col-lg-10 mt-3">
-      <p>Change Image: </p>
+      <%= "Change Image:" if @image.picture? %>
+      <p></p>
       <%= f.file_field :picture, accept: "image/jpeg,image/jpg,image/gif,image/png" %>
     </div>
     <%=f.error_span(:picture) %>
