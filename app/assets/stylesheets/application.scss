@@ -33,6 +33,7 @@ color: #000 !important;
 .logout-button {
 padding-left: 0;
 margin-top: 10px !important;
+margin-left: 5px !important;
 }
 
 .nav.navbar-right {
@@ -112,4 +113,7 @@ color: #fff;
 .links:hover{
   color: #000 !important;
   text-decoration: underline !important;
+}
+.upgrade-text{
+  color: red;
 }

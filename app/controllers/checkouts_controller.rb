@@ -1,5 +1,6 @@
 class CheckoutsController < ApplicationController
   before_action :authenticate_user!
+  before_action :is_user_paid?
 
   def show
     current_user.set_payment_processor :stripe
@@ -19,5 +20,13 @@ class CheckoutsController < ApplicationController
     @line_items = Stripe::Checkout::Session.list_line_items(params[:session_id])
     current_user.paid = true
     current_user.save!
+  end
+
+  private
+  def is_user_paid?
+    if current_user.paid?
+      flash[:alert] = "You have already paid."
+      redirect_to root_path
+    end
   end
 end

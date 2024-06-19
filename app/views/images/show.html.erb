@@ -12,9 +12,11 @@
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               images_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_image_path(@image), :class => 'btn btn-default' %>
-<%= link_to t('.delete', :default => t("helpers.links.destroy")),
-              image_path(@image),
-              :data => {"turbo-method": :delete, :turbo_confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<% if current_user.paid%>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_image_path(@image), :class => 'btn btn-default' %>
+  <%= link_to t('.delete', :default => t("helpers.links.destroy")),
+                image_path(@image),
+                :data => {"turbo-method": :delete, :turbo_confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+<% end %>
